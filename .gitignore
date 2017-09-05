@@ -6,6 +6,9 @@ files/
 sites/*/files
 sites/*/private
 
+# Ignore generated css
+sites/all/themes/afamallorca/css
+
 # Ignore default text files
 robots.txt
 /CHANGELOG.txt
