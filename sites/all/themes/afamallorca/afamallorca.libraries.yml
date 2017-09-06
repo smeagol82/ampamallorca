@@ -1,7 +1,19 @@
 global-styling:
   version: VERSION
   js:
+    js/plugins/popper.min.js: {}
+    js/plugins/bootstrap-datepicker.js: {}
+    js/plugins/bootstrap-switch.js: {}
+    js/plugins/jquery.sharrre.js: {}
+    js/plugins/nouislider.min.js: {}
+    js/bootstrap.min.js: {}
+    js/now-ui-kit.js: {}
     js/global.js: {}
   css:
     component:
+      css/bootstrap.min.css: {}
       css/style.css: {}
+  dependencies:
+     - core/jquery
+     - core/jquery.once
+     - core/drupal

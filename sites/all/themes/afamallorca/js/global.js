@@ -7,7 +7,7 @@
 
   'use strict';
 
-  Drupal.behaviors.bootstrap_barrio_subtheme = {
+  Drupal.behaviors.afamallorca = {
     attach: function (context, settings) {
 
     }

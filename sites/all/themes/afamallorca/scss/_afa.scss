@@ -1,0 +1,40 @@
+@import 'now-ui-kit/variables';
+@import 'custom_variables';
+
+/**
+ * Estils personalitzats
+ *********************************/
+
+
+/********************
+ * LAYOUT
+ * @section: layout
+ ***************/
+
+/*
+ * @subsection: header
+ */
+
+.navbar {
+  .site-logo img {
+    max-height: 50px;
+  }
+  .site-name-slogan {
+    display: none;
+  }
+  &.navbar-transparent .site-name-slogan {
+    display: block;
+  }
+}
+
+
+/*
+ * @subsection: main
+ */
+.page-header {
+  height: 70vh;
+  max-height: 900px;
+  &[filter-color="primary"] {
+    @include linear-gradient(rgba($black-color, .20), $custom_header_color);
+  }
+}
