@@ -7,11 +7,16 @@ global-styling:
     js/plugins/jquery.sharrre.js: {}
     js/plugins/nouislider.min.js: {}
     js/bootstrap.min.js: {}
+    js/fullcalendar/moment.min.js: {}
+    js/fullcalendar/fullcalendar.js: {}
+    js/fullcalendar/locale/ca.js: {}
+    js/fullcalendar/gcal.js: {}
     js/now-ui-kit.js: {}
     js/global.js: {}
   css:
     component:
       css/bootstrap.min.css: {}
+      css/fullcalendar.css: {}
       css/style.css: {}
   dependencies:
      - core/jquery
