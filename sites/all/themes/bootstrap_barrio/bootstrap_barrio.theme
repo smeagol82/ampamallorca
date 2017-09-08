@@ -101,9 +101,9 @@ function bootstrap_barrio_preprocess_page(&$variables) {
   }
 
   $width = _bootstrap_barrio_content_width(!empty($variables['page']['sidebar_first']), !empty($variables['page']['sidebar_second']));
-  $content_width = 'col-md-' . $width;
-  $sidebar_first_width = 'col-md-' . theme_get_setting('bootstrap_barrio_sidebar_first_width');
-  $sidebar_second_width = 'col-md-' . theme_get_setting('bootstrap_barrio_sidebar_second_width');
+  $content_width = 'col-lg-' . $width;
+  $sidebar_first_width = 'col-lg-' . theme_get_setting('bootstrap_barrio_sidebar_first_width');
+  $sidebar_second_width = 'col-lg-' . theme_get_setting('bootstrap_barrio_sidebar_second_width');
 
   // Define default classes for containers
   $variables['navbar_top_attributes'] = array(

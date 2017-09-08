@@ -24,6 +24,12 @@
 	}
 	&.navbar-transparent .site-name-slogan {
 		display: block;
+		@include media-breakpoint-down(md) {
+			padding-top: 20px;
+		}
+	}
+	@include media-breakpoint-down(md) {
+		padding-top: 5px !important;
 	}
 }
 
@@ -51,10 +57,26 @@
 .page-header-background {
 	background: darken($primary-color, 30%);
 	height: 115px;
+	@include media-breakpoint-down(md) {
+		height: 75px;
+	}
 }
 
 .content .page-title {
 	display: none;
+}
+
+.layout-sidebar-second {
+	#sidebar_second.sidebar {
+		@include media-breakpoint-up(lg) {
+			-ms-flex-order: 3;
+			order: 3;
+		}
+		@include media-breakpoint-down(lg) {
+			width: 100%;
+			max-width: 100%;
+		}
+	}
 }
 
 

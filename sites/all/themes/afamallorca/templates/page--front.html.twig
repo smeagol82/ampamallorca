@@ -4,9 +4,9 @@
  * Custom layout based on Bootstrap Barrio's theme implementation to display a single page.
  *
 #}
-
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent " color-on-scroll="70">
+<nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent " color-on-scroll="400">
+
 	<div class="container">
 		<div class="navbar-translate">
 			<div class="navbar-brand" data-placement="bottom">
@@ -29,15 +29,16 @@
 </nav>
 <!-- End Navbar -->
 <div class="wrapper">
-	<div class="page-header-background"></div>
-	<div class="main">
-		{% if not is_front and page %}
-			<div class="page_title">
-				<div class="container">
-					<h1>{{ page['#title'] }}</h1>
-				</div>
+	<div class="page-header page-header-small">
+		<div class="page-header-image" data-parallax="true" style="background-image: url('sites/all/themes/afamallorca/images/header_home.jpg');"></div>
+		<div class="container">
+			<div class="content-center brand">
+				<h1 class="h1-seo">AFA Mallorca</h1>
+				<h3>L'associació de pares de l'escola Mallorca</h3>
 			</div>
-        {% endif %}
+		</div>
+	</div>
+	<div class="main">
 		{% if page.highlighted %}
 			<div class="highlighted">
 				<aside class="{{ container }} clearfix" role="complementary">
@@ -45,38 +46,37 @@
 				</aside>
 			</div>
 		{% endif %}
-		{% if page.featured_top %}
-			{% block featured %}
-				<div class="featured-top">
-					<aside class="featured-top__inner {{ container }} clearfix" role="complementary">
-						{{ page.featured_top }}
-					</aside>
-				</div>
-			{% endblock %}
-		{% endif %}
+		<div class="{{ container }} clearfix" role="complementary">
+			<div class="row">
+				{% if page.featured_top %}
+					{% block featured %}
+						<div class="featured-top col col-sm-12 col-md-6">
+							<aside class="featured-top__inner clearfix" role="complementary">
+								{{ page.featured_top }}
+							</aside>
+						</div>
+					{% endblock %}
+				{% endif %}
+				{% if page.sidebar_first %}
+					<div class="col col-sm-12 col-md-6">
+						<aside class="section" role="complementary">
+							{{ page.sidebar_first }}
+						</aside>
+					</div>
+				{% endif %}
+			</div>
+		</div>
 		{% block content %}
-			<div class="{{ container }}">
-				<div class="row row-offcanvas row-offcanvas-left clearfix">
-					{% if page.sidebar_first %}
-						<div{{ sidebar_first_attributes }}>
-							<aside class="section" role="complementary">
-								{{ page.sidebar_first }}
-							</aside>
-						</div>
-					{% endif %}
-					{% if page.sidebar_second %}
-						<div{{ sidebar_second_attributes }}>
-							<aside class="section" role="complementary">
-								{{ page.sidebar_second }}
-							</aside>
-						</div>
-					{% endif %}
-					<main{{ content_attributes }}>
-						<section class="section">
-							<a id="main-content" tabindex="-1"></a>
-							{{ page.content }}
-						</section>
-					</main>
+			<div class="last_posts">
+				<div class="{{ container }}">
+					<div class="row row-offcanvas row-offcanvas-left clearfix">
+						<main class="col-xs-12">
+							<section class="section">
+								<a id="main-content" tabindex="-1"></a>
+								{{ page.content }}
+							</section>
+						</main>
+					</div>
 				</div>
 			</div>
 		{% endblock %}

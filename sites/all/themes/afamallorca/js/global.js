@@ -10,8 +10,12 @@
   Drupal.behaviors.afamallorca = {
     attach: function (context, settings) {
 		$('#home_calendar').fullCalendar({
-			defaultView: 'listWeek',
-			height: 300,
+			header: {
+				left: '',
+				right: 'today prev,next'
+			},
+			defaultView: 'listYear',
+			height: 400,
 			/*googleCalendarApiKey: 'AIzaSyCwy-s3wXj69PliTQuz4FUdNgjCq3Ob5Qc',
 			eventSources: [
 				{
@@ -22,6 +26,12 @@
 					className: 'nice-event'
 				}
 			]*/
+			eventLimit: true,
+			views: {
+				listYear: {
+					eventLimit: 4
+				}
+			},
 			events: [
 				{
 					title  : 'event1',
