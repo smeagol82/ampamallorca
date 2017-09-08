@@ -6,7 +6,8 @@
 #}
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent " color-on-scroll="400">
+<nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent " {% if is_front %} color-on-scroll="400" {% else %} color-on-scroll="70"  {% endif %}>
+
 	<div class="container">
 		<div class="navbar-translate">
 			<div class="navbar-brand" data-placement="bottom">
@@ -29,20 +30,30 @@
 </nav>
 <!-- End Navbar -->
 <div class="wrapper">
-	<div class="page-header clear-filter" filter-color="orange">
-		<div class="page-header-image" data-parallax="true" style="background-image: url('sites/all/themes/afamallorca/images/header_home.jpg');">
-		</div>
-		<div class="container">
-			<div class="content-center brand">
-				<h1 class="h1-seo">AFA Mallorca</h1>
-				<h3>L'associació de pares de l'escola Mallorca</h3>
+	{% if is_front %}
+		<div class="page-header page-header-small">
+			<div class="page-header-image" data-parallax="true" style="background-image: url('sites/all/themes/afamallorca/images/header_home.jpg');"></div>
+			<div class="container">
+				<div class="content-center brand">
+					<h1 class="h1-seo">AFA Mallorca</h1>
+					<h3>L'associació de pares de l'escola Mallorca</h3>
+				</div>
 			</div>
 		</div>
-	</div>
-	<main class="main">
+	{% else %}
+		<div class="page-header-background"></div>
+	{% endif %}
+	<div class="main">
+		{% if not is_front and page %}
+			<div class="page_title">
+				<div class="container">
+					<h1>{{ page['#title'] }}</h1>
+				</div>
+			</div>
+        {% endif %}
 		{% if page.highlighted %}
 			<div class="highlighted">
-				<aside class="{{ container }} section clearfix" role="complementary">
+				<aside class="{{ container }} clearfix" role="complementary">
 					{{ page.highlighted }}
 				</aside>
 			</div>
@@ -50,38 +61,45 @@
 		{% if page.featured_top %}
 			{% block featured %}
 				<div class="featured-top">
-					<aside class="featured-top__inner section {{ container }} clearfix" role="complementary">
+					<aside class="featured-top__inner {{ container }} clearfix" role="complementary">
 						{{ page.featured_top }}
 					</aside>
 				</div>
 			{% endblock %}
 		{% endif %}
 		{% block content %}
-			<div class="row row-offcanvas row-offcanvas-left clearfix">
-				{{ page.breadcrumb }}
-				<main{{ content_attributes }}>
-					<section class="section">
-						<a id="main-content" tabindex="-1"></a>
-						{{ page.content }}
-					</section>
-				</main>
-				{% if page.sidebar_first %}
-					<div{{ sidebar_first_attributes }}>
-						<aside class="section" role="complementary">
-							{{ page.sidebar_first }}
-						</aside>
-					</div>
-				{% endif %}
-				{% if page.sidebar_second %}
-					<div{{ sidebar_second_attributes }}>
-						<aside class="section" role="complementary">
-							{{ page.sidebar_second }}
-						</aside>
-					</div>
-				{% endif %}
+		{% if is_front %}
+			<div class="last_posts">
+		{% endif %}
+			<div class="{{ container }}">
+				<div class="row row-offcanvas row-offcanvas-left clearfix">
+					{% if page.sidebar_first %}
+						<div{{ sidebar_first_attributes }}>
+							<aside class="section" role="complementary">
+								{{ page.sidebar_first }}
+							</aside>
+						</div>
+					{% endif %}
+					<main{{ content_attributes }}>
+						<section class="section">
+							<a id="main-content" tabindex="-1"></a>
+							{{ page.content }}
+						</section>
+					</main>
+					{% if page.sidebar_second %}
+						<div{{ sidebar_second_attributes }}>
+							<aside class="section" role="complementary">
+								{{ page.sidebar_second }}
+							</aside>
+						</div>
+					{% endif %}
+				</div>
 			</div>
+			{% if is_front %}
+				</div>
+			{% endif %}
 		{% endblock %}
-	</main>
+	</div>
 	{% if page.featured_bottom_first or page.featured_bottom_second or page.featured_bottom_third %}
 		<div class="featured-bottom">
 			<aside class="{{ container }} clearfix" role="complementary">

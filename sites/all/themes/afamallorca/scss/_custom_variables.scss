@@ -6,3 +6,18 @@
 
 $custom_header_color: rgba(85,85,255, .8);
 
+
+/* Mixins */
+
+@mixin border-radius($radius) {
+	-moz-border-radius: $radius;
+	-webkit-border-radius: $radius;
+	border-radius: $radius;
+}
+
+@mixin box-shadow($bshadow) {
+	-moz-box-shadow: $bshadow;
+	-webkit-box-shadow: $bshadow;
+	box-shadow: $bshadow;
+}
+

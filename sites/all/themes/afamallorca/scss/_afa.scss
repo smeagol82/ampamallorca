@@ -9,32 +9,110 @@
 /********************
  * LAYOUT
  * @section: layout
- ***************/
+ *********************/
 
 /*
  * @subsection: header
  */
 
 .navbar {
-  .site-logo img {
-    max-height: 50px;
-  }
-  .site-name-slogan {
-    display: none;
-  }
-  &.navbar-transparent .site-name-slogan {
-    display: block;
-  }
+	.site-logo img {
+		max-height: 50px;
+	}
+	.site-name-slogan {
+		display: none;
+	}
+	&.navbar-transparent .site-name-slogan {
+		display: block;
+	}
+}
+
+.page_title {
+	background: $primary-color;
+	color: #fff;
+	padding: 15px 0;
+	h1 {
+		margin: 0;
+	}
 }
 
 
 /*
  * @subsection: main
  */
+
 .page-header {
-  height: 70vh;
-  max-height: 900px;
-  &[filter-color="primary"] {
-    @include linear-gradient(rgba($black-color, .20), $custom_header_color);
-  }
+	height: 70vh;
+	max-height: 900px;
+	&[filter-color="primary"] {
+		@include linear-gradient(rgba($black-color, .20), $custom_header_color);
+	}
+}
+.page-header-background {
+	background: darken($primary-color, 30%);
+	height: 115px;
+}
+
+.content .page-title {
+	display: none;
+}
+
+
+/********************
+ * HOME
+ * @section: home
+ *********************/
+
+//Bloc de missatge avís
+.path-frontpage .region-highlighted {
+	margin-bottom: 20px;
+	@extend .card;
+	background: $info-color;
+	color: #fff;
+	z-index: 2;
+	padding: 20px 30px 10px;
+	@include border-radius(10px);
+	top: -20px;
+	left: 10%;
+	width: 80%;
+	h2 { display: none; }
+	#block-avishome {
+		padding-left: 50px;
+		position: relative;
+		&:before {
+			@extend .now-ui-icons;
+			@extend .travel_info;
+			position: absolute;
+			left: 10px;
+			top: 0;
+			font-size: 24px;
+		}
+	}
+}
+
+//Llistat de posts
+.view-frontpage {
+	.view-content {
+		@include make-row();
+	}
+	.views-row {
+		.card {
+			margin: 10px 0;
+			overflow: visible;
+			.item_image {
+				text-align: center;
+				img {
+					min-width: 100%;
+				}
+			}
+			.card-body {
+				min-height: 50px;
+				.card-title a { color: $black-color; }
+				.card-subtitle { color: $dark-gray; }
+			}
+		}
+	}
+	.view-footer {
+		padding: 25px;
+	}
 }
