@@ -9,6 +9,8 @@
 
   Drupal.behaviors.afamallorca = {
     attach: function (context, settings) {
+
+    	//Calendaris
 		$('#home_calendar').fullCalendar({
 			header: {
 				left: '',
@@ -49,7 +51,6 @@
 				}
 			]
 		});
-
 		$('#calendar').fullCalendar({
 			header: {
 				left: 'prev,next today',
@@ -83,6 +84,19 @@
 				}
 			]
 		});
+
+		//Buscador
+		$(".search_toggler").on('click', function() {
+			$(".block-search-form-block").addClass("open");
+			$(".cover_layer").addClass("show");
+			return false;
+		});
+		$("#close_search").on('click', function() {
+			$(".block-search-form-block").removeClass("open");
+			$(".cover_layer").removeClass("show");
+			return false;
+		});
+
 
     }
   };
