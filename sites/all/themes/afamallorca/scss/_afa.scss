@@ -439,3 +439,13 @@
 		}
 	}
 }
+
+.pagination-container {
+	display: flex;
+	.pager__item--ellipsis {
+		line-height: 30px;
+	}
+	.page_arrow {
+		font-size: 1.3rem !important;
+	}
+}
