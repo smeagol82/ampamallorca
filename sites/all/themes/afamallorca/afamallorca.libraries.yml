@@ -17,6 +17,7 @@ global-styling:
     component:
       css/bootstrap.min.css: {}
       css/fullcalendar.css: {}
+      css/fontawesome.min.css: {}
       css/style.css: {}
   dependencies:
      - core/jquery
