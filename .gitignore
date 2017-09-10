@@ -7,7 +7,7 @@ sites/*/files
 sites/*/private
 
 # Ignore generated css
-sites/all/themes/afamallorca/css
+sites/all/themes/afamallorca/css/style.css
 
 # Ignore default text files
 robots.txt
