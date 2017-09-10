@@ -149,7 +149,7 @@
 	}
 }
 .page-header-background {
-	background: darken($primary-color, 30%);
+	background: $primary-color-dark;
 	height: 115px;
 	@include media-breakpoint-down(md) {
 		height: 75px;
@@ -193,7 +193,7 @@
  */
 #block-avishome {
 	@extend .card;
-	background: $info-color;
+	background: $secondary-color;
 	color: #fff;
 	z-index: 2;
 	padding: 20px 30px 10px;
@@ -240,6 +240,16 @@
 				min-height: 50px;
 				.card-title a { color: $black-color; }
 				.card-subtitle { color: $dark-gray; }
+				.item_category {
+					position: relative;
+					top: -18px;
+					left: -20px;
+					display: inline-block;
+					padding: 0 25px;
+					background: $secondary-color;
+					color: $white-color;
+					a { color: inherit; }
+				}
 			}
 		}
 	}
@@ -368,6 +378,63 @@
 				background-color: #ff3b30;
 				color: #FFFFFF;
 				border-radius: 50%;
+			}
+		}
+	}
+}
+
+/********************
+ * POSTS
+ * @section: posts
+ *********************/
+
+/*
+ * @subsection: list
+ */
+
+.view-list-of-articles {
+	.views-row {
+		margin-bottom: 25px;
+		@extend .card;
+		overflow: visible;
+		background: $white-bg;
+		.views-field-title {
+			font-size: 2rem;
+			padding: 0 25px 25px;
+			a { color: $black-color; }
+			.field-content {
+				display: block;
+				padding: 0 15px 10px;
+				border-bottom: 3px solid $primary-color;
+				position: relative;
+			}
+		}
+		.views-field-created {
+			font-size: 1rem;
+			padding: 25px 40px 0;
+			color: $dark-gray;
+		}
+		.views-field-field-image {
+			margin-bottom: 15px;
+			position: relative;
+			text-align: center;
+		}
+		.views-field-body {
+			padding: 25px 40px;
+		}
+		.views-field-field-category {
+			position: relative;
+			.field-content {
+				position: absolute;
+				top: -24px;
+				left: -10px;
+				display: inline-block;
+				padding: 5px 35px;
+				background: $secondary-color;
+				color: $white-color;
+				a {
+					color: inherit;
+				}
 			}
 		}
 	}
