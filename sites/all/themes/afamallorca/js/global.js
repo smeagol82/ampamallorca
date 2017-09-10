@@ -13,10 +13,10 @@
     	//Calendaris
 		$('#home_calendar').fullCalendar({
 			header: {
-				left: '',
+				left: 'title',
 				right: 'today prev,next'
 			},
-			defaultView: 'listYear',
+			defaultView: 'listWeek',
 			height: 400,
 			/*googleCalendarApiKey: 'AIzaSyCwy-s3wXj69PliTQuz4FUdNgjCq3Ob5Qc',
 			eventSources: [
@@ -53,9 +53,9 @@
 		});
 		$('#calendar').fullCalendar({
 			header: {
-				left: 'prev,next today',
-				center: 'title',
-				right: 'month,agenda,listYear'
+				right: 'prev,next today',
+				left: 'title',
+				center: 'month,agenda,listYear'
 			},
 			/*googleCalendarApiKey: 'AIzaSyCwy-s3wXj69PliTQuz4FUdNgjCq3Ob5Qc',
 			eventSources: [

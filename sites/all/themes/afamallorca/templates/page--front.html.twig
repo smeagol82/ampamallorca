@@ -46,7 +46,7 @@
 				</aside>
 			</div>
 		{% endif %}
-		<div class="{{ container }} clearfix" role="complementary">
+		<div class="{{ container }} destacats_home clearfix" role="complementary">
 			<div class="row">
 				{% if page.featured_top %}
 					{% block featured %}
@@ -59,7 +59,8 @@
 				{% endif %}
 				{% if page.sidebar_first %}
 					<div class="col col-sm-12 col-md-6">
-						<aside class="section" role="complementary">
+						<aside class="clearfix" role="complementary">
+							<h2>{% trans %} Destacats {% endtrans %}</h2>
 							{{ page.sidebar_first }}
 						</aside>
 					</div>
@@ -69,8 +70,8 @@
 		{% block content %}
 			<div class="last_posts">
 				<div class="{{ container }}">
-					<div class="row row-offcanvas row-offcanvas-left clearfix">
-						<main class="col-xs-12">
+					<div class="row clearfix">
+						<main class="col">
 							<section class="section">
 								<a id="main-content" tabindex="-1"></a>
 								{{ page.content }}

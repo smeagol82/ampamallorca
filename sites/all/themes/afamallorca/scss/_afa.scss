@@ -45,6 +45,7 @@
 		padding-left: 15px;
 		font-size: 20px;
 		cursor: pointer;
+		color: #fff;
 		@include media-breakpoint-up(lg) {
 			border-left: 1px solid #fff;
 		}
@@ -65,6 +66,7 @@
 	}
 }
 
+//Cercador
 .block-search-form-block {
 	position: fixed;
 	top: -200px;
@@ -136,6 +138,9 @@
  * @subsection: main
  */
 
+.main, .main .section {
+	background: #f1f1f1;
+}
 .page-header {
 	height: 70vh;
 	max-height: 900px;
@@ -168,13 +173,24 @@
 	}
 }
 
+.sidebar .block {
+	border: none;
+	h2 {
+		padding: 10px 5px;
+		border-top: 3px solid $medium-gray;
+		border-bottom: 3px solid $medium-gray;
+	}
+}
 
 /********************
  * HOME
  * @section: home
  *********************/
 
-//Bloc de missatge avís
+/*
+ * Bloc de missatge avís
+ * @subsection: avis
+ */
 #block-avishome {
 	@extend .card;
 	background: $info-color;
@@ -202,7 +218,10 @@
 	}
 }
 
-//Llistat de posts
+/*
+ * Llistat de posts
+ * @subsection: posts_home
+ */
 .view-frontpage {
 	.view-content {
 		@include make-row();
@@ -229,50 +248,127 @@
 	}
 }
 
+/*
+ * @subsection: destacats
+ */
 
-//Calendari
-
-#home_calendar {
-	.fc-view {
-		border: none;
+.destacats_home {
+	.block {
+		@include media-breakpoint-up(lg) {
+			width: 50%;
+			float: left;
+		}
+		text-align: center;
+		padding-top: 230px;
+	}
+	#block-extraescolarshome {
+		background: url("../images/ico_extraescolars.png") no-repeat center top ;
+	}
+	#block-menjadorblock {
+		background: url("../images/ico_menjador.png") no-repeat center top ;
 	}
 }
 
+
+/********************
+ * CALENDARI
+ * @section: calendari
+ *********************/
+
+.fc-header-toolbar {
+	h2 {
+		font-size: 1.5rem;
+		padding-top: 5px;
+	}
+	button {
+		background: $white-bg;
+		color: $color-red;
+		border-color: $color-red;
+		@include box-shadow(none);
+		&.fc-state-active {
+			background: $color-red;
+			color: $white-bg;
+		}
+		&.fc-today-button {
+			border: none;
+			background: $light-red;
+		}
+		&.fc-prev-button,
+		&.fc-next-button {
+			.fc-icon {
+				line-height: 1.6rem;
+			}
+		}
+	}
+}
+.fc-view {
+	.fc-widget-header {
+		background: #f2f2f2;
+		color: $black-color;
+		border: none;
+		th { border: none; }
+	}
+	.fc-list-item {
+		background: $white-bg;
+	}
+	.fc-list-empty {
+		background: url("../images/sorry.png") no-repeat center 100px $light-gray ;
+	}
+}
+
+//Bloc de la home
+#home_calendar {
+	.fc-view {
+		background: $white-bg;
+		.fc-list-table {
+			margin: 0;
+		}
+	}
+}
+
+//Página de calendari
 #calendar {
 	margin: 0 auto;
 	background-color: #FFFFFF;
 	border-radius: 6px;
 	box-shadow: 0 1px 2px #C3C3C3;
-	#external-events {
-		float: left;
-		width: 150px;
-		padding: 0 10px;
-		text-align: left;
+	.fc-header-toolbar {
+		padding: 20px 15px 0;
+		h2 {
+			text-transform: capitalize;
+			font-size: 2.5rem;
+		}
+		.fc-left, .fc-center {
+			width: 33%;
+		}
+		.fc-center {
+			text-align: center;
+		}
 	}
-	
-	#external-events h4 {
-		font-size: 16px;
-		margin-top: 0;
-		padding-top: 1em;
-	}
-	
-	.external-event { /* try to mimick the look of a real event */
-		margin: 10px 0;
-		padding: 2px 4px;
-		background: #3366CC;
-		color: #fff;
-		font-size: .85em;
-		cursor: pointer;
-	}
-	
-	#external-events p {
-		margin: 1.5em 0;
-		font-size: 11px;
-		color: #666;
-	}
-	
-	#external-events p input {
-		margin: 0;
-		vertical-align: middle;
+	.fc-body {
+		background: $white-bg;
+		tr {
+			background: $white-bg;
+		}
+		.fc-content-skeleton table thead tr {
+			border-bottom: none;
+		}
+		.fc-scroller {
+			overflow-y: hidden !important;
+			height: auto !important;
+		}
+		.fc-day-number {
+			margin: 4px;
+			font-size: 1rem;
+			padding: 2px 4px 5px 6px;
+		}
+		.fc-today {
+			background: $white-bg;
+			.fc-day-number {
+				background-color: #ff3b30;
+				color: #FFFFFF;
+				border-radius: 50%;
+			}
+		}
 	}
 }
