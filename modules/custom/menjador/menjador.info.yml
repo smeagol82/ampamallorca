@@ -1,4 +1,4 @@
-name: Calendar Block
+name: Menjador Block
 type: module
 description: Defines a custom block.
 core: 8.x
