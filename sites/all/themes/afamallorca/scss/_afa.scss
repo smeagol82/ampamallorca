@@ -503,7 +503,53 @@
 			a {
 				color: #68696b;
 				font-size: 0.86rem;
-				&:hover { color: $primary-color; }
+				&:hover {
+					color: $primary-color;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}
+
+/********************
+ * CERCA
+ * @section: search
+ *********************/
+
+#search-form {
+	margin-bottom: 50px;
+	@extend .card;
+	padding: 20px;
+	#edit-basic {
+		overflow: hidden;
+		fieldset.form-group {
+			width: 80%;
+			float: left;
+		}
+		button.form-submit {
+			margin-top: 27px;
+			width: 18%;
+			float: left;
+			@extend .btn-round;
+		}
+	}
+	#edit-help-link { display: none; }
+}
+
+.search-results {
+	padding-left: 30px;
+	li {
+		padding: 15px 0;
+		h3 {
+			display: inline-block;
+			font-size: 1.2rem;
+			margin-bottom: 10px;
+			a {
+				color: $black-color;
+				&:hover {
+					color: $primary-color;
+				}
 			}
 		}
 	}
