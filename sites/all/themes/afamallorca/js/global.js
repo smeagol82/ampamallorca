@@ -97,6 +97,12 @@
 			return false;
 		});
 
+		//Toggle de menu de categorías
+
+		$("#block-afamallorca-menusidebar h2").on('click', function() {
+			$(this).toggleClass('opened');
+			$("#block-afamallorca-menusidebar .nav").toggleClass("opened");
+		});
 
     }
   };

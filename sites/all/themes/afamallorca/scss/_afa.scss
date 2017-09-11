@@ -174,14 +174,77 @@
 	}
 }
 
-.sidebar .block {
-	border: none;
-	h2 {
-		padding: 10px 5px;
-		border-top: 3px solid $medium-gray;
-		border-bottom: 3px solid $medium-gray;
+.sidebar {
+	.section {
+		padding: 20px 0;
+		@include media-breakpoint-up(md) {
+			&:first-child {
+				padding-top: 40px;
+			}
+		}
+	}
+	.block {
+		border: none;
+		@include media-breakpoint-down(md) {
+			padding: 15px 0;
+		}
+		h2 {
+			padding: 10px 5px;
+			font-size: 1.2rem;
+			font-weight: bold;
+			border-bottom: 3px solid $primary-color-dark;
+			color: $primary-color-dark;
+		}
+		&.block-menu {
+			.nav-item {
+				display: block;
+				width: 100%;
+				font-size: 0.86rem;
+				.nav-link {
+					color: $color_gray_text;
+					border-bottom: 1px solid $light-gray;
+					&:hover {
+						color: $primary-color;
+					}
+				}
+			}
+		}
+		&#block-afamallorca-menusidebar {
+			@include media-breakpoint-down(md) {
+				padding-bottom: 0;
+				margin-bottom: 0;
+				h2 {
+					position: relative;
+					padding-right: 40px;
+					cursor: pointer;
+					&:before {
+						font-family: FontAwesome;
+						content: "\f107";
+						font-size: 20px;
+						position: absolute;
+						right: 10px;
+						top: 10px;
+					}
+					&.opened:before {
+						content: "\f106";
+					}
+				}
+				.nav {
+					max-height: 0;
+					overflow: hidden;
+					-webkit-transition: all 0.15s linear;
+					-o-transition: all 0.15s linear;
+					transition: all 0.15s linear;
+					&.opened { max-height: 400px; }
+					.nav-link {
+						text-align: center;
+					}
+				}
+			}
+		}
 	}
 }
+
 
 /********************
  * HOME
