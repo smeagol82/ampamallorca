@@ -328,12 +328,17 @@
 
 .destacats_home {
 	.block {
-		@include media-breakpoint-up(lg) {
+		@include media-breakpoint-up(sm) {
 			width: 50%;
 			float: left;
 		}
 		text-align: center;
 		padding-top: 230px;
+	}
+	.destacats_links h2 {
+		@include media-breakpoint-up(lg) {
+			padding-bottom: 40px;
+		}
 	}
 	#block-extraescolarshome {
 		background: url("../images/ico_extraescolars.png") no-repeat center top ;

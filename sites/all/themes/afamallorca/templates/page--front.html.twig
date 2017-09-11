@@ -50,7 +50,7 @@
 			<div class="row">
 				{% if page.featured_top %}
 					{% block featured %}
-						<div class="featured-top col col-sm-12 col-md-6">
+						<div class="featured-top col col-sm-12 col-lg-6">
 							<aside class="featured-top__inner clearfix" role="complementary">
 								{{ page.featured_top }}
 							</aside>
@@ -58,7 +58,7 @@
 					{% endblock %}
 				{% endif %}
 				{% if page.sidebar_first %}
-					<div class="col col-sm-12 col-md-6">
+					<div class="destacats_links col col-sm-12 col-lg-6">
 						<aside class="clearfix" role="complementary">
 							<h2>{% trans %} Destacats {% endtrans %}</h2>
 							{{ page.sidebar_first }}
