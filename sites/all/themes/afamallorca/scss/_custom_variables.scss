@@ -25,3 +25,10 @@ $color_gray_text: #555;
 	box-shadow: $bshadow;
 }
 
+@mixin clearfix() {
+	&::after {
+		display: block;
+		content: "";
+		clear: both;
+	}
+}
