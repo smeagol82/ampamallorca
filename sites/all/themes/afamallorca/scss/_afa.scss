@@ -55,6 +55,30 @@
 			margin-right: 15px;
 		}
 	}
+	@include media-breakpoint-down(lg) {
+		.navbar-collapse .menu--main {
+			.nav-link {
+				&:before {
+					font-family: FontAwesome;
+					font-size: 17px;
+					margin-right: 10px;
+				}
+				&[href='/']:before {
+					content: "\f015";
+					font-size: 20px;
+				}
+				&[href='/articles']:before {
+					content: "\f1ea";
+				}
+				&[href='/butlletins']:before {
+					content: "\f1c5";
+				}
+				&[href='/calendari']:before {
+					content: "\f073";
+				}
+			}
+		}
+	}
 }
 
 .page_title {
