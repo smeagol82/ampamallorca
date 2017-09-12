@@ -375,6 +375,7 @@ h1, h2 {
  */
 
 .destacats_home {
+	padding-top: 45px;
 	.block {
 		@include media-breakpoint-up(sm) {
 			width: 50%;
@@ -440,6 +441,26 @@ h1, h2 {
 	}
 	.fc-list-empty {
 		background: url("../images/sorry.png") no-repeat center 100px $light-gray ;
+	}
+	.fc-time {
+		font-size: 0.75rem;
+	}
+}
+
+.fc-agenda-view {
+	.fc-day-grid .fc-row.fc-week {
+		.fc-widget-content {
+			font-size: 0.75rem;
+		}
+	}
+	.fc-time-grid-container {
+		.fc-time-grid {
+			margin: 0;
+		}
+	}
+	.fc-divider.fc-widget-header {
+		height: 9px;
+		background-color: #ddd;
 	}
 }
 
