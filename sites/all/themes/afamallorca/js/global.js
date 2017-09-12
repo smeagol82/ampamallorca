@@ -22,10 +22,11 @@
 			eventSources: [
 				{
 					googleCalendarId: 'afa.escolamallorca@gmail.com'
+					color: '#06bcc7'
 				},
 				{
 					googleCalendarId: '07bemih03g6rkh7f7o2hq5bh5g@group.calendar.google.com',
-					className: 'nice-event'
+					color: '#b3dc6c'
 				}
 			]*/
 			eventLimit: true,
@@ -49,7 +50,8 @@
 					start  : '2017-09-12T12:30:00',
 					allDay : false // will make the time show
 				}
-			]
+			],
+			eventColor: '#b3dc6c'
 		});
 		$('#calendar').fullCalendar({
 			header: {
@@ -60,11 +62,12 @@
 			/*googleCalendarApiKey: 'AIzaSyCwy-s3wXj69PliTQuz4FUdNgjCq3Ob5Qc',
 			eventSources: [
 				{
-					googleCalendarId: 'afa.escolamallorca@gmail.com'
+					googleCalendarId: 'afa.escolamallorca@gmail.com',
+					color: '#06bcc7'
 				},
 				{
 					googleCalendarId: '07bemih03g6rkh7f7o2hq5bh5g@group.calendar.google.com',
-					className: 'nice-event'
+					color: '#b3dc6c'
 				}
 			]*/
 			events: [
@@ -82,7 +85,8 @@
 					start  : '2017-09-12T12:30:00',
 					allDay : false // will make the time show
 				}
-			]
+			],
+			eventColor: '#b3dc6c'
 		});
 
 		//Buscador
