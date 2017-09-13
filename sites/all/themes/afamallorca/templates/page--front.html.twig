@@ -63,6 +63,13 @@
 							<h2>{% trans %} Destacats {% endtrans %}</h2>
 							{{ page.sidebar_first }}
 						</aside>
+						<div class="banner-escola col col-sm-12">
+							<a href="http://agora.xtec.cat/ceip-mallorca">
+								<div class="content">
+									<img src="/sites/all/themes/afamallorca/images/logo_escola.png" /> Coneix l'escola Mallorca
+								</div>
+							</a>
+						</div>
 					</div>
 				{% endif %}
 			</div>
@@ -84,6 +91,7 @@
 	</div>
 	{% if page.featured_bottom_first or page.featured_bottom_second or page.featured_bottom_third %}
 		<div class="featured-bottom">
+			<div class="primary_mask"></div>
 			<aside class="{{ container }} clearfix" role="complementary">
 				{{ page.featured_bottom_first }}
 				{{ page.featured_bottom_second }}
