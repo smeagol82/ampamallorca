@@ -816,8 +816,6 @@ h1, h2 {
 			padding-top: 30px;
 		}
 	}
-	#block-contacte {
-	}
 }
 
 
@@ -827,5 +825,75 @@ h1, h2 {
 	padding: 20px;
 	#edit-actions {
 		text-align: right;
+	}
+}
+
+
+
+/**********************
+ * PÀGINES
+ * @section: pages
+ ***********************/
+
+.node--type-page {
+	h2 {
+		text-align: center;
+	}
+}
+
+/*
+ * @subsection: about
+ */
+
+.section-about-us {
+	.section-story-overview {
+		p {
+			margin-bottom: 30px;
+		}
+		h3 {
+			margin-bottom: 15px;
+		}
+		%qs-icons {
+			font-size: 40px;
+			color: $dark-gray;
+			position: absolute;
+			top: 20px;
+			left: 40px;
+			font-family: "Nucleo Outline";
+		}
+		padding-bottom: 0;
+		#qs_volem {
+			h3 {
+				padding-top: 20px;
+			}
+			p {
+				position: relative;
+				padding-left: 120px;
+				padding-bottom: 20px;
+				border-bottom: 1px solid $light-gray;
+				margin-bottom: 20px;
+				&:last-child {
+					border: none;
+				}
+				&:before {
+					@extend %qs-icons;
+				}
+			}
+			#qs_volem_1 {
+				&:before {
+					content: "\ea30";
+				}
+			}
+			#qs_volem_2 {
+				&:before {
+					content: "\ea55";
+				}
+			}
+			#qs_volem_3 {
+				&:before {
+					content: "\ea01";
+				}
+			}
+		}
 	}
 }
