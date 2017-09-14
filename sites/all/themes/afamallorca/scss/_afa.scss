@@ -97,6 +97,16 @@ h1, h2 {
 	}
 }
 
+.page-header {
+	h1, h3 {
+		font-weight: 300;
+		margin: 0;
+	}
+	h3 {
+		font-size: 1.7rem;
+		font-weight: 400;
+	}
+}
 .page_title {
 	background: $primary-color;
 	color: #fff;
@@ -392,9 +402,11 @@ h1, h2 {
 	}
 	#block-extraescolarshome {
 		background: url("../images/ico_extraescolars.png") no-repeat center top ;
+		background-size: 60%;
 	}
 	#block-menjadorblock {
 		background: url("../images/ico_menjador.png") no-repeat center top ;
+		background-size: 60%;
 	}
 	.banner-escola {
 		@extend .card;
