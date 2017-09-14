@@ -83,6 +83,9 @@ h1, h2 {
 					content: "\f015";
 					font-size: 20px;
 				}
+				&[href='/qui-som']:before {
+					content: "\f0c0";
+				}
 				&[href='/articles']:before {
 					content: "\f1ea";
 				}
@@ -193,6 +196,7 @@ h1, h2 {
 	padding: 20px 0;
 	h2 {
 		margin-bottom: 10px;
+		text-align: left !important;
 	}
 	.nav {
 		flex-direction: column;
