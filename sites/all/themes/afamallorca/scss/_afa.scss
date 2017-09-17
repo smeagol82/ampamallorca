@@ -517,8 +517,19 @@ h1, h2 {
 		&.fc-prev-button,
 		&.fc-next-button {
 			.fc-icon {
-				line-height: 1.6rem;
+				line-height: 20px;
+				font-size: 20px;
+				&:after {
+					line-height: 20px;
+					top: 0;
+					font-family: FontAwesome;
+					content: "\f104";
+					font-size: 20px;
+				}
 			}
+		}
+		&.fc-next-button .fc-icon:after {
+			content: "\f105";
 		}
 	}
 }
